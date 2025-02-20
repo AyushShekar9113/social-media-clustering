@@ -60,7 +60,7 @@ decoder = tf.keras.Sequential([
     tf.keras.layers.Dense(data_scaled.shape[1], activation='sigmoid')
 ])
 
-input_layer = tf.keras.layers.Input(shape=(data.shape[1],))
+input_layer = tf.keras.layers.Input(shape=(data_scaled.shape[1],))
 encoded = encoder(input_layer)
 decoded = decoder(encoded)
 autoencoder = tf.keras.Model(inputs=input_layer, outputs=decoded)
